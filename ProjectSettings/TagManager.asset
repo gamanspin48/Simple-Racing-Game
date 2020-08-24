@@ -41,3 +41,9 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Jalan
+    uniqueID: 2061530241
+    locked: 0
+  - name: di atas jalan
+    uniqueID: 1309819923
+    locked: 0
