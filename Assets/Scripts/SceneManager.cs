@@ -5,6 +5,7 @@ using UnityEngine;
 public class SceneManager : MonoBehaviour
 {   
     public float velocity;
+    public int score;
     public static SceneManager Instance { get; private set; } // static singleton
     void Awake() {
          if (Instance == null) { Instance = this;  }

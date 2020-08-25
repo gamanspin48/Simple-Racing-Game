@@ -23,4 +23,13 @@ public class Car : MonoBehaviour
 
     }
 
+    void OnTriggerEnter2D(Collider2D other){
+        if(other.tag=="papan"){
+            Debug.Log("Game Over");
+        }else{
+            SceneManager.Instance.score += 1;
+            SceneManager.Instance.velocity += 0.01f;
+        }
+    }
+
 }
