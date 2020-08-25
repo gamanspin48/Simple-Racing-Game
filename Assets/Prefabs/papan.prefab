@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 5623696339999411817}
   m_Layer: 0
   m_Name: papan
-  m_TagString: Untagged
+  m_TagString: papan
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
