@@ -10,9 +10,11 @@ public class MovingObject : MonoBehaviour
     public Sprite[] otherSprites;
 
     void Update(){
-        Vector3 curPos = transform.position;
-        curPos.y -= SceneManager.Instance.velocity;
-        transform.position = curPos;
+        if (!SceneManager.Instance.isGameOver){
+            Vector3 curPos = transform.position;
+            curPos.y -= (SceneManager.Instance.velocity * Time.deltaTime);
+            transform.position = curPos;
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other){
