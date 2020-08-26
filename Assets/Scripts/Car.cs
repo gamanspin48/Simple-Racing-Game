@@ -14,11 +14,9 @@ public class Car : MonoBehaviour
                 if (!SceneManager.Instance.isGameOver){
                     isRight = !isRight;
                     ChangePosition();
-                }else{
-                    SceneManager.Instance.isGameOver = false;
-                    SceneManager.Instance.score = 0;
-                    SceneManager.Instance.papan.Reset();
-                    SceneManager.Instance.keterangan.gameObject.SetActive(false);
+                }else if(!SceneManager.Instance.isStart){
+                    SceneManager.Instance.isStart = true;
+                    SceneManager.Instance.Reset();
                 }  
             }
         
@@ -34,12 +32,11 @@ public class Car : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other){
         if(other.tag=="papan"){
-            Debug.Log("Game Over");
-            SceneManager.Instance.isGameOver = true;
+            SceneManager.Instance.GameOver();
         }else if (other.tag == "lolos"){
             SceneManager.Instance.score += 1;
             SceneManager.Instance.UpdateScore(); 
-            SceneManager.Instance.velocity += 0.1f;
+            SceneManager.Instance.velocity += 0.3f;
         }
     }
 
